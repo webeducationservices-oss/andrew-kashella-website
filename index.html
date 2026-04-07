@@ -3,6 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager (consent defaults) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PTDQK2SG');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="google-site-verification" content="7cZk9ca2w-eXEhI7wwFUwV9f6TKd2jo6RYdcbzwulSQ" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>Andrew Kashella | Mortgage Loan Officer</title>
@@ -1097,6 +1119,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTDQK2SG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- NAVIGATION -->
   <nav id="main-nav">
@@ -1109,10 +1135,11 @@
       </a>
       <ul class="nav-links">
         <li><a href="tel:727-564-3826" style="color:var(--green-primary);font-weight:700;"><i class="fas fa-phone" style="margin-right:0.4rem;"></i>727-564-3826</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#loan-programs">Loan Programs</a></li>
-        <li><a href="calculator.html">Calculator</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#loan-programs">Loan Programs</a></li>
+        <li><a href="/calculator">Calculator</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
         <li><a href="https://innovative.my1003app.com/139171/register" target="_blank" class="nav-cta">Start Application</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -1120,10 +1147,11 @@
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#about">About</a>
-      <a href="#loan-programs">Loan Programs</a>
-      <a href="calculator.html">Calculator</a>
-      <a href="#contact">Contact</a>
+      <a href="/#about">About</a>
+      <a href="/#loan-programs">Loan Programs</a>
+      <a href="/calculator">Calculator</a>
+      <a href="/blog">Blog</a>
+      <a href="/#contact">Contact</a>
       <a href="https://innovative.my1003app.com/139171/register" target="_blank" style="color: var(--green-primary);">Start Application</a>
     </div>
   </nav>
@@ -1597,6 +1625,7 @@
             <li><a href="#about">About Andrew</a></li>
             <li><a href="#purchase-detail">Home Purchase</a></li>
             <li><a href="#refinance">Refinance</a></li>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="#contact">First-Time Buyers</a></li>
             <li><a href="#contact">Investment Property</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1648,5 +1677,69 @@
 
     // Form submits via Formsubmit.co to andrew@innovativemlo.com
   </script>
+
+  <!-- GDPR Cookie Consent Banner -->
+  <style>
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999;
+      background: #1a1a2e; color: #fff; padding: 1rem 1.5rem;
+      display: none; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', sans-serif;
+      font-size: 0.88rem; line-height: 1.5; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+    }
+    .cookie-banner.show { display: flex; }
+    .cookie-banner p { margin: 0; max-width: 700px; }
+    .cookie-banner a { color: #6ec1e4; text-decoration: underline; }
+    .cookie-btn {
+      border: none; border-radius: 6px; padding: 0.5rem 1.25rem;
+      font-weight: 600; font-size: 0.85rem; cursor: pointer;
+      font-family: 'Poppins', sans-serif; white-space: nowrap;
+    }
+    .cookie-btn-accept { background: #2e9b62; color: #fff; }
+    .cookie-btn-accept:hover { background: #257a4e; }
+    .cookie-btn-decline { background: transparent; color: #ccc; border: 1px solid #555; }
+    .cookie-btn-decline:hover { background: rgba(255,255,255,0.08); }
+  </style>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies to analyze site traffic and improve your experience. By clicking "Accept," you consent to our use of analytics cookies. <a href="https://andrewkashella.com/privacy" target="_blank" rel="noopener">Privacy&nbsp;Policy</a></p>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Decline</button>
+  </div>
+
+  <script>
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'granted') {
+        updateConsent('granted');
+      } else if (consent === 'denied') {
+        updateConsent('denied');
+      } else {
+        document.getElementById('cookie-banner').classList.add('show');
+      }
+    })();
+
+    function updateConsent(status) {
+      gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+      });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookie_consent', 'granted');
+      updateConsent('granted');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookie_consent', 'denied');
+      updateConsent('denied');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+  </script>
+  <!-- End GDPR Cookie Consent Banner -->
 </body>
 </html>
