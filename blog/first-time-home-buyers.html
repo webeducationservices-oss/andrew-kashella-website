@@ -335,6 +335,127 @@
 
     .back-to-blog:hover { gap: 0.75rem; }
 
+    /* ---- TOPICS BOX ---- */
+    .topics-box {
+      background: var(--bg-light);
+      border: 1px solid rgba(31,94,170,0.12);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .topics-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .topics-box-header i {
+      color: var(--blue-primary);
+      font-size: 1rem;
+    }
+
+    .topics-box-header span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol {
+      list-style: none;
+      counter-reset: topics;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topics-box ol li {
+      counter-increment: topics;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .topics-box ol li::before {
+      content: counter(topics) ".";
+      font-weight: 700;
+      color: var(--blue-primary);
+      margin-right: 0.5rem;
+    }
+
+    .topics-box ol li a {
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .topics-box ol li a:hover {
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---- INLINE CTA BOX ---- */
+    .inline-cta {
+      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inline-cta::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .inline-cta h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .btn-primary {
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .no-obligation {
+      display: block;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
     /* ---- CTA SECTION ---- */
     .article-cta {
       background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
@@ -582,7 +703,24 @@
 
       <p>That's exactly what pre-qualification is designed to answer. And getting it done early can save you time, stress, and missed opportunities down the road.</p>
 
-      <h2>What Is Pre-Qualification?</h2>
+      <!-- TOPICS -->
+      <div class="topics-box">
+        <div class="topics-box-header">
+          <i class="fas fa-list"></i>
+          <span>In This Article</span>
+        </div>
+        <ol>
+          <li><a href="#what-is-prequal">What Is Pre-Qualification?</a></li>
+          <li><a href="#why-it-matters">Why Pre-Qualification Matters for First-Time Buyers</a></li>
+          <li><a href="#what-lenders-look-at">What Does a Lender Look At?</a></li>
+          <li><a href="#how-to-prepare">How to Prepare for Pre-Qualification</a></li>
+          <li><a href="#what-happens-after">What Happens After Pre-Qualification?</a></li>
+          <li><a href="#common-myths">Common First-Time Buyer Myths</a></li>
+          <li><a href="#the-bottom-line">The Bottom Line</a></li>
+        </ol>
+      </div>
+
+      <h2 id="what-is-prequal">What Is Pre-Qualification?</h2>
 
       <p>Pre-qualification is an initial assessment of your borrowing power. A loan officer reviews your income, debts, assets, and credit to give you an estimate of how much mortgage you could qualify for.</p>
 
@@ -592,7 +730,7 @@
         <p><strong>Pre-qualification vs. pre-approval:</strong> These terms are often used interchangeably, but there's a difference. Pre-qualification is typically based on self-reported financial information. Pre-approval goes a step further&mdash;the lender verifies your income, assets, and credit through documentation. A pre-approval letter carries more weight with sellers because it shows the lender has done the homework.</p>
       </div>
 
-      <h2>Why Pre-Qualification Matters for First-Time Buyers</h2>
+      <h2 id="why-it-matters">Why Pre-Qualification Matters for First-Time Buyers</h2>
 
       <h3>1. You'll Know Your Budget Before You Start Shopping</h3>
       <p>Without pre-qualification, you're guessing. You might fall in love with a home that's $50,000 above your budget, or you might be limiting yourself unnecessarily. Pre-qualification sets a clear range so you can focus on homes you can actually afford.</p>
@@ -606,7 +744,15 @@
       <h3>4. It Helps You Understand Your Loan Options</h3>
       <p>First-time buyers often qualify for programs they didn't know existed. During pre-qualification, your loan officer can walk you through options like FHA loans (lower down payment requirements), VA loans (for eligible veterans and service members), USDA loans (for qualifying rural areas), and conventional loans with as little as 3% down.</p>
 
-      <h2>What Does a Lender Look At?</h2>
+      <!-- INLINE CTA -->
+      <div class="inline-cta">
+        <h3>Ready to See What You Qualify For?</h3>
+        <p>Start an application to get a clear picture of your options. No commitment required&mdash;just a simple way to explore what's possible.</p>
+        <a href="https://innovative.my1003app.com/139171/register" target="_blank" class="btn-primary">Start Your Application</a>
+        <span class="no-obligation"><i class="fas fa-lock" style="margin-right:0.3rem;"></i> No obligation &mdash; just get to know your options</span>
+      </div>
+
+      <h2 id="what-lenders-look-at">What Does a Lender Look At?</h2>
 
       <p>During pre-qualification, a loan officer will review four main areas:</p>
 
@@ -621,7 +767,7 @@
         <p><strong>What's a good DTI ratio?</strong> Most lenders prefer a DTI below 43%, and some loan programs allow up to 50%. Your DTI is calculated by dividing your total monthly debt payments (including the projected mortgage payment) by your gross monthly income. For example, if your debts total $2,000/month and you earn $5,000/month, your DTI is 40%.</p>
       </div>
 
-      <h2>How to Prepare for Pre-Qualification</h2>
+      <h2 id="how-to-prepare">How to Prepare for Pre-Qualification</h2>
 
       <p>You don't need to have everything perfect before you reach out. But having these items ready will make the process faster and more accurate:</p>
 
@@ -636,7 +782,7 @@
 
       <p>If you're self-employed, you'll typically need two years of tax returns and possibly a profit-and-loss statement. Your loan officer can guide you on exactly what's needed for your situation.</p>
 
-      <h2>What Happens After Pre-Qualification?</h2>
+      <h2 id="what-happens-after">What Happens After Pre-Qualification?</h2>
 
       <p>Once you have your pre-qualification letter, you're ready to start the home search with confidence. Here's what the road ahead looks like:</p>
 
@@ -648,7 +794,7 @@
         <li><strong>Close on your home:</strong> After final approval, you'll sign the paperwork, the funds are disbursed, and the keys are yours.</li>
       </ol>
 
-      <h2>Common First-Time Buyer Myths</h2>
+      <h2 id="common-myths">Common First-Time Buyer Myths</h2>
 
       <h3>You need 20% down</h3>
       <p>This is one of the biggest misconceptions in homebuying. While 20% avoids private mortgage insurance (PMI), many first-time buyer programs allow 3% to 3.5% down. FHA loans require just 3.5%, and VA loans offer 0% down for eligible borrowers. There are also down payment assistance programs in many states.</p>
@@ -659,7 +805,7 @@
       <h3>Pre-qualification locks you into a lender</h3>
       <p>It doesn't. Pre-qualification is a conversation, not a contract. You're free to shop around, compare offers, and choose the lender that gives you the best terms for your situation.</p>
 
-      <h2>The Bottom Line</h2>
+      <h2 id="the-bottom-line">The Bottom Line</h2>
 
       <p>If you're thinking about buying your first home, getting pre-qualified is the single best first step you can take. It gives you clarity on your budget, credibility with sellers, and a head start on the financing process. And it costs you nothing but a conversation.</p>
 

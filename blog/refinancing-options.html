@@ -336,6 +336,127 @@
 
     .back-to-blog:hover { gap: 0.75rem; }
 
+    /* ---- TOPICS BOX ---- */
+    .topics-box {
+      background: var(--bg-light);
+      border: 1px solid rgba(31,94,170,0.12);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .topics-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .topics-box-header i {
+      color: var(--blue-primary);
+      font-size: 1rem;
+    }
+
+    .topics-box-header span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol {
+      list-style: none;
+      counter-reset: topics;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topics-box ol li {
+      counter-increment: topics;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .topics-box ol li::before {
+      content: counter(topics) ".";
+      font-weight: 700;
+      color: var(--blue-primary);
+      margin-right: 0.5rem;
+    }
+
+    .topics-box ol li a {
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .topics-box ol li a:hover {
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---- INLINE CTA BOX ---- */
+    .inline-cta {
+      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inline-cta::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .inline-cta h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .btn-primary {
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .no-obligation {
+      display: block;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
     /* ---- CTA SECTION ---- */
     .article-cta {
       background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
@@ -583,13 +704,29 @@
 
       <p>Let's walk through what refinancing actually involves, when it makes financial sense, and what your options look like.</p>
 
-      <h2>What Is Mortgage Refinancing?</h2>
+      <!-- TOPICS -->
+      <div class="topics-box">
+        <div class="topics-box-header">
+          <i class="fas fa-list"></i>
+          <span>In This Article</span>
+        </div>
+        <ol>
+          <li><a href="#what-is-refinancing">What Is Mortgage Refinancing?</a></li>
+          <li><a href="#when-does-it-make-sense">When Does Refinancing Make Sense?</a></li>
+          <li><a href="#types-of-refinance">Types of Refinance Loans</a></li>
+          <li><a href="#the-process">What the Process Looks Like</a></li>
+          <li><a href="#common-questions">Common Questions About Refinancing</a></li>
+          <li><a href="#is-it-right-for-you">Is Refinancing Right for You?</a></li>
+        </ol>
+      </div>
+
+      <h2 id="what-is-refinancing">What Is Mortgage Refinancing?</h2>
 
       <p>Refinancing means replacing your current mortgage with a new one. The new loan pays off the old one, and you move forward with updated terms&mdash;potentially a lower interest rate, a different loan length, or a different loan type altogether.</p>
 
       <p>It's not starting over from scratch. It's adjusting your loan to better fit where you are now.</p>
 
-      <h2>When Does Refinancing Make Sense?</h2>
+      <h2 id="when-does-it-make-sense">When Does Refinancing Make Sense?</h2>
 
       <p>There's no single rule that works for everyone, but here are the most common scenarios where refinancing pays off:</p>
 
@@ -612,7 +749,15 @@
         <p><strong>A quick note on timing:</strong> Refinancing involves closing costs, typically 2% to 5% of the loan amount. Make sure the monthly savings justify those upfront costs. A common benchmark is the "break-even point"&mdash;the number of months it takes for your savings to exceed the cost of refinancing. If you plan to stay in the home past that point, the refinance usually makes sense.</p>
       </div>
 
-      <h2>Types of Refinance Loans</h2>
+      <!-- INLINE CTA -->
+      <div class="inline-cta">
+        <h3>Curious About Your Refinance Options?</h3>
+        <p>Start an application to see what you could qualify for. No commitment, no obligation&mdash;just a clear look at your options.</p>
+        <a href="https://innovative.my1003app.com/139171/register" target="_blank" class="btn-primary">Start Your Application</a>
+        <span class="no-obligation"><i class="fas fa-lock" style="margin-right:0.3rem;"></i> No obligation &mdash; just get to know your options</span>
+      </div>
+
+      <h2 id="types-of-refinance">Types of Refinance Loans</h2>
 
       <p>Not all refinances are the same. Here are the main types:</p>
 
@@ -623,7 +768,7 @@
         <li><strong>Cash-In Refinance:</strong> Less common, but worth knowing. You bring cash to closing to reduce your loan balance, potentially eliminating PMI or qualifying for a better rate.</li>
       </ul>
 
-      <h2>What the Process Looks Like</h2>
+      <h2 id="the-process">What the Process Looks Like</h2>
 
       <p>Refinancing follows a similar process to your original mortgage:</p>
 
@@ -638,7 +783,7 @@
 
       <p>Most refinances take 30 to 45 days from application to closing, though timelines can vary based on the lender and loan type.</p>
 
-      <h2>Common Questions About Refinancing</h2>
+      <h2 id="common-questions">Common Questions About Refinancing</h2>
 
       <h3>Does refinancing reset my loan to 30 years?</h3>
       <p>Only if you choose a 30-year term. You can refinance into whatever term works best for your situation&mdash;15 years, 20 years, or even match the remaining years on your current mortgage.</p>
@@ -649,7 +794,7 @@
       <h3>Can I refinance with less than 20% equity?</h3>
       <p>Yes, though you may need to pay private mortgage insurance (PMI) if your equity is below 20%. FHA streamline refinances have their own equity requirements, which tend to be more flexible.</p>
 
-      <h2>Is Refinancing Right for You?</h2>
+      <h2 id="is-it-right-for-you">Is Refinancing Right for You?</h2>
 
       <p>Every situation is different. The best way to find out is to have a conversation with a loan officer who can look at your specific numbers and walk you through the options. There's no obligation, and a quick review is usually all it takes to know whether refinancing makes sense for you right now.</p>
 

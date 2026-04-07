@@ -370,6 +370,127 @@
       background: rgba(31,94,170,0.03);
     }
 
+    /* ---- TOPICS BOX ---- */
+    .topics-box {
+      background: var(--bg-light);
+      border: 1px solid rgba(31,94,170,0.12);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .topics-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .topics-box-header i {
+      color: var(--blue-primary);
+      font-size: 1rem;
+    }
+
+    .topics-box-header span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol {
+      list-style: none;
+      counter-reset: topics;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topics-box ol li {
+      counter-increment: topics;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .topics-box ol li::before {
+      content: counter(topics) ".";
+      font-weight: 700;
+      color: var(--blue-primary);
+      margin-right: 0.5rem;
+    }
+
+    .topics-box ol li a {
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .topics-box ol li a:hover {
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---- INLINE CTA BOX ---- */
+    .inline-cta {
+      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inline-cta::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .inline-cta h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .btn-primary {
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .no-obligation {
+      display: block;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
     /* ---- CTA SECTION ---- */
     .article-cta {
       background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
@@ -619,13 +740,29 @@
 
       <p>For many people, "no mortgage" sounds like the obvious goal. But when you look at the math, using a mortgage and keeping your investments working for you can actually leave you in a stronger financial position over time.</p>
 
-      <h2>The Instinct to Pay Cash</h2>
+      <!-- TOPICS -->
+      <div class="topics-box">
+        <div class="topics-box-header">
+          <i class="fas fa-list"></i>
+          <span>In This Article</span>
+        </div>
+        <ol>
+          <li><a href="#instinct-to-pay-cash">The Instinct to Pay Cash</a></li>
+          <li><a href="#what-you-give-up">What You Give Up When You Pull From Investments</a></li>
+          <li><a href="#mortgage-alternative">How the Mortgage Alternative Works</a></li>
+          <li><a href="#when-it-makes-sense">When This Strategy Makes the Most Sense</a></li>
+          <li><a href="#when-cash-is-better">When Paying Cash Might Be the Better Choice</a></li>
+          <li><a href="#key-takeaway">The Key Takeaway</a></li>
+        </ol>
+      </div>
+
+      <h2 id="instinct-to-pay-cash">The Instinct to Pay Cash</h2>
 
       <p>It's easy to understand the appeal. No monthly payment, no interest, no debt. It feels clean and simple. And emotionally, being "mortgage-free" carries real weight, especially heading into retirement.</p>
 
       <p>But financial decisions work best when they account for more than just emotion. Paying cash for a home means pulling a large sum out of your investment portfolio&mdash;and that has consequences that aren't immediately obvious.</p>
 
-      <h2>What You Give Up When You Pull From Investments</h2>
+      <h2 id="what-you-give-up">What You Give Up When You Pull From Investments</h2>
 
       <h3>1. Lost Growth Potential</h3>
       <p>Money sitting in a diversified investment portfolio has historically earned between 7% and 10% annually over the long term (before inflation). When you pull $300,000 out to buy a house, that money stops compounding. Over 15 or 20 years, the growth you miss out on can be substantial.</p>
@@ -643,7 +780,15 @@
       <h3>4. Disrupted Retirement Income</h3>
       <p>If your investment portfolio is generating dividends, interest, or planned withdrawals for retirement living expenses, pulling a large lump sum can disrupt that income stream and force you to rethink your entire withdrawal strategy.</p>
 
-      <h2>How the Mortgage Alternative Works</h2>
+      <!-- INLINE CTA -->
+      <div class="inline-cta">
+        <h3>Exploring Your Downsizing Options?</h3>
+        <p>Start an application to see what mortgage options fit your situation. No commitment, no obligation&mdash;just clarity on what's available.</p>
+        <a href="https://innovative.my1003app.com/139171/register" target="_blank" class="btn-primary">Start Your Application</a>
+        <span class="no-obligation"><i class="fas fa-lock" style="margin-right:0.3rem;"></i> No obligation &mdash; just get to know your options</span>
+      </div>
+
+      <h2 id="mortgage-alternative">How the Mortgage Alternative Works</h2>
 
       <p>Instead of paying cash, you use some of your home sale proceeds as a down payment (say 20% to 40%) and finance the rest with a mortgage. The remaining equity from the sale stays invested.</p>
 
@@ -707,7 +852,7 @@
         <p><strong>Important note:</strong> Investment returns are not guaranteed, and past performance doesn't predict future results. This comparison illustrates a general principle, not a guaranteed outcome. Your actual numbers will depend on your specific investment mix, mortgage rate, time horizon, and tax situation. Always consult with your financial advisor before making major decisions.</p>
       </div>
 
-      <h2>When This Strategy Makes the Most Sense</h2>
+      <h2 id="when-it-makes-sense">When This Strategy Makes the Most Sense</h2>
 
       <ul>
         <li><strong>You're earning a higher return than your mortgage rate.</strong> If your portfolio consistently earns more than what you're paying in mortgage interest, keeping the money invested is mathematically favorable.</li>
@@ -717,7 +862,7 @@
         <li><strong>You can comfortably afford the mortgage payment.</strong> This strategy works best when the monthly payment fits easily within your budget or retirement income plan.</li>
       </ul>
 
-      <h2>When Paying Cash Might Be the Better Choice</h2>
+      <h2 id="when-cash-is-better">When Paying Cash Might Be the Better Choice</h2>
 
       <p>This isn't a one-size-fits-all answer. Paying cash can make more sense if:</p>
 
@@ -729,7 +874,7 @@
         <li>You're in a very high tax bracket where mortgage interest deductions no longer apply (most people no longer itemize after the 2017 tax changes)</li>
       </ul>
 
-      <h2>The Key Takeaway</h2>
+      <h2 id="key-takeaway">The Key Takeaway</h2>
 
       <p>"Pay off the house" isn't always the best financial advice, especially when you have a well-performing investment portfolio. By using a mortgage strategically, you can keep your money growing, maintain financial flexibility, avoid a major tax hit, and still move into the home you want.</p>
 
