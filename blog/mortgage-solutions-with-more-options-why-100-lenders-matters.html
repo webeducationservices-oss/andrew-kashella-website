@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -26,10 +25,9 @@
   })(window,document,'script','dataLayer','GTM-PTDQK2SG');</script>
   <!-- End Google Tag Manager -->
 
-  
-  <link rel="icon" type="image/svg+xml" href="..//favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>Mortgage Solutions with More Options: Why 100+ Lenders Matters | Andrew Kashella</title>
-  <meta name="description" content="Mortgage tips, guides, and insights from Andrew Kashella. Learn about refinancing, first-time homebuying, pre-qualification, and smart financial strategies for homeowners." />
+  <meta name="description" content="Not every borrower fits the same mold. Learn why working with a broker who has access to 100+ lenders gives you more loan options and better outcomes." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -190,41 +188,9 @@
     .mobile-menu a:hover { color: var(--blue-primary); }
     .mobile-menu a:last-child { border-bottom: none; }
 
-    /* ---- SECTIONS ---- */
-    section { padding: 5rem 2rem; }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-primary);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 1.25rem;
-    }
-
-    .section-title span { color: var(--blue-primary); }
-
-    .section-body {
-      color: var(--gray);
-      max-width: 680px;
-      font-size: 1.05rem;
-    }
-
-    /* ---- BLOG HERO ---- */
-    .blog-hero {
-      padding-top: 160px;
+    /* ---- ARTICLE HERO ---- */
+    .article-hero {
+      padding-top: 112px;
       background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 60%, #2a6fc4 100%);
       color: var(--white);
       padding-bottom: 4rem;
@@ -232,7 +198,7 @@
       overflow: hidden;
     }
 
-    .blog-hero::before {
+    .article-hero::before {
       content: '';
       position: absolute;
       top: -80px; right: -120px;
@@ -241,7 +207,7 @@
       border-radius: 50%;
     }
 
-    .blog-hero::after {
+    .article-hero::after {
       content: '';
       position: absolute;
       bottom: -150px; left: -100px;
@@ -250,13 +216,14 @@
       border-radius: 50%;
     }
 
-    .blog-hero .container {
+    .article-hero .container {
       position: relative;
       z-index: 1;
-      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .blog-hero-badge {
+    .article-hero-badge {
       display: inline-block;
       background: rgba(46,155,98,0.25);
       border: 1px solid rgba(46,155,98,0.5);
@@ -270,119 +237,241 @@
       margin-bottom: 1.5rem;
     }
 
-    .blog-hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
+    .article-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.15;
       margin-bottom: 1rem;
     }
 
-    .blog-hero h1 span { color: #7ee8b0; }
+    .article-hero h1 span { color: #7ee8b0; }
 
-    .blog-hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 640px;
-      margin: 0 auto;
-      line-height: 1.75;
-    }
-
-    /* ---- BLOG GRID ---- */
-    .blog-list {
-      background: var(--bg-light);
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-
-    .blog-card {
-      background: var(--white);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(31,94,170,0.08);
-      border: 1px solid rgba(31,94,170,0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(31,94,170,0.14);
-    }
-
-    .blog-card-icon {
-      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
-      padding: 2.5rem 2rem;
+    .article-meta {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
     }
 
-    .blog-card-icon i {
-      font-size: 2.5rem;
-      color: #7ee8b0;
+    .article-meta i { margin-right: 0.3rem; }
+
+    /* ---- ARTICLE CONTENT ---- */
+    .article-content {
+      padding: 4rem 2rem;
     }
 
-    .blog-card-body {
-      padding: 1.75rem;
+    .article-content .container {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .blog-card-meta {
-      font-size: 0.78rem;
-      color: var(--gray);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.5rem;
-    }
-
-    .blog-card-body h3 {
-      font-size: 1.2rem;
+    .article-content h2 {
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--text-dark);
-      margin-bottom: 0.75rem;
-      line-height: 1.35;
+      margin: 2.5rem 0 1rem;
     }
 
-    .blog-card-body p {
-      font-size: 0.92rem;
-      color: var(--gray);
-      line-height: 1.7;
+    .article-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      margin: 2rem 0 0.75rem;
+    }
+
+    .article-content p {
+      color: var(--text-dark);
+      font-size: 1.05rem;
+      line-height: 1.85;
       margin-bottom: 1.25rem;
     }
 
-    .read-more {
-      font-size: 0.9rem;
-      font-weight: 700;
+    .article-content ul, .article-content ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .article-content strong {
+      color: var(--text-dark);
+    }
+
+    .callout-box {
+      background: var(--bg-light);
+      border-left: 4px solid var(--blue-primary);
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 10px 10px 0;
+      margin: 2rem 0;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    .callout-box strong {
       color: var(--blue-primary);
+    }
+
+    /* ---- BACK LINK ---- */
+    .back-to-blog {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--blue-primary);
+      margin-bottom: 2rem;
       transition: gap 0.2s;
     }
 
-    .read-more:hover {
-      gap: 0.7rem;
-      color: var(--blue-secondary);
+    .back-to-blog:hover { gap: 0.75rem; }
+
+    /* ---- TOPICS BOX ---- */
+    .topics-box {
+      background: var(--bg-light);
+      border: 1px solid rgba(31,94,170,0.12);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0 2.5rem;
     }
 
-    /* ---- CTA SECTION ---- */
-    .blog-cta {
-      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
-      text-align: center;
-      color: var(--white);
-    }
-
-    .blog-cta h2 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
+    .topics-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       margin-bottom: 1rem;
     }
 
-    .blog-cta p {
+    .topics-box-header i {
+      color: var(--blue-primary);
+      font-size: 1rem;
+    }
+
+    .topics-box-header span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol {
+      list-style: none;
+      counter-reset: topics;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topics-box ol li {
+      counter-increment: topics;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .topics-box ol li::before {
+      content: counter(topics) ".";
+      font-weight: 700;
+      color: var(--blue-primary);
+      margin-right: 0.5rem;
+    }
+
+    .topics-box ol li a {
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .topics-box ol li a:hover {
+      color: var(--blue-primary);
+    }
+
+    .topics-box ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---- INLINE CTA BOX ---- */
+    .inline-cta {
+      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inline-cta::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .inline-cta h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .btn-primary {
+      position: relative;
+      z-index: 1;
+    }
+
+    .inline-cta .no-obligation {
+      display: block;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- CTA SECTION ---- */
+    .article-cta {
+      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
+      text-align: center;
+      color: var(--white);
+      padding: 4rem 2rem;
+    }
+
+    .article-cta h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .article-cta p {
       color: rgba(255,255,255,0.85);
       max-width: 560px;
       margin: 0 auto 2rem;
@@ -541,7 +630,6 @@
 
     /* ---- RESPONSIVE ---- */
     @media (max-width: 900px) {
-      .blog-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
       .nav-links { display: none; }
@@ -549,13 +637,19 @@
     }
 
     @media (max-width: 600px) {
-      section { padding: 3.5rem 1.25rem; }
-      .blog-hero { padding-top: 150px; padding-bottom: 3rem; }
+      .article-hero { padding-top: 150px; padding-bottom: 3rem; }
+      .article-content { padding: 2.5rem 1.25rem; }
+      .article-content h2 { font-size: 1.3rem; }
     }
   </style>
-
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTDQK2SG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- NAVIGATION -->
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
@@ -587,55 +681,129 @@
     </div>
   </nav>
 
-  <section class="blog-post" style="padding: 3rem 0 5rem;">
-    <div class="container" style="max-width: 780px; width: 90%; margin: 0 auto;">
-
-      <a href="../blog/" style="display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.9rem;margin-bottom:2rem;">&larr; Back to Blog</a>
-
-      <div style="margin-bottom: 2.5rem;">
-        <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;font-size:.85rem;color:#6B7785;margin-bottom:1rem;">
-          <span>April 7, 2026</span>
-          <span style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;background:rgba(0,180,216,.1);color:#0096b7;padding:.2rem .6rem;border-radius:50px;">Loan Options</span>
-          <span>2 min read</span>
-        </div>
-        <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);line-height:1.25;margin-bottom:1rem;">Mortgage Solutions with More Options: Why 100+ Lenders Matters</h1>
-        <p style="color:#6B7785;font-size:.9rem;">By Andrew Kashella</p>
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-badge">Loan Options</div>
+      <h1>Mortgage Solutions with More Options: Why <span>100+ Lenders</span> Matters</h1>
+      <div class="article-meta">
+        <span><i class="fas fa-calendar-alt"></i> April 7, 2026</span>
+        <span><i class="fas fa-clock"></i> 2 min read</span>
+        <span><i class="fas fa-user"></i> Andrew Kashella</span>
       </div>
-
-      <div class="blog-post-content">
-        <p>When most people start shopping for a mortgage, they go to their bank or the first lender they find online. They get one set of rates, one set of terms, and one answer: <strong>approved or denied.</strong></p>
-<p>But what if the answer doesn't have to be that simple?</p>
-<h2>The Problem with One Lender</h2>
-<p>A single lender has a single set of guidelines. If your financial situation doesn't fit their box perfectly — maybe your credit score is 10 points below their threshold, maybe you're self-employed, maybe you're buying an investment property — you get a “no.”</p>
-<p>That “no” doesn't mean you can't get a mortgage. It means you're talking to the wrong lender.</p>
-<h2>Why 100+ Lenders Changes Everything</h2>
-<p>As an independent mortgage broker, I work with over 100 wholesale lenders. Each one has different guidelines, different rate sheets, and different strengths. That means:</p>
-<ul>
-<li><strong>More residential loan options</strong> for more borrower scenarios — from first-time buyers to seasoned investors</li>
-<li><strong>Every major loan type covered:</strong> Conventional, FHA, VA, USDA, Jumbo, DSCR, Non-QM, bank statement loans, and more</li>
-<li><strong>Competitive rates</strong> because lenders compete for your business, not the other way around</li>
-<li><strong>Creative solutions</strong> for self-employed borrowers, recent credit events, mixed-use properties, and unique situations</li>
-</ul>
-<h2>Personal Guidance, Not a Sales Pitch</h2>
-<p>Technology is great for research, but when it comes to the biggest financial decision of your life, you deserve a real person who understands your goals. That's what I provide: clear answers, honest advice, and hands-on support from your first question through closing day.</p>
-<p>No AI chatbot telling you what to do. No call center putting you on hold. Just direct access to someone who knows the mortgage market inside and out.</p>
-<h2>Who This Helps Most</h2>
-<p>If any of these sound familiar, having access to 100+ lenders could make the difference between a denial and an approval:</p>
-<ul>
-<li>You're self-employed or have non-traditional income</li>
-<li>Your credit score is good but not perfect</li>
-<li>You're buying a second home or investment property</li>
-<li>You need a jumbo loan above conforming limits</li>
-<li>You've been told “no” by a bank or online lender</li>
-<li>You want to compare rates across multiple lenders without multiple hard credit pulls</li>
-</ul>
-<h2>Ready to See Your Real Options?</h2>
-<p>Don't settle for one lender's answer when you could have dozens. <a href='/#contact'>Schedule a call with me</a> and let's find the right loan for your situation — not the loan that's convenient for the lender.</p>
-      </div>
-
     </div>
   </section>
 
+  <!-- ARTICLE CONTENT -->
+  <section class="article-content">
+    <div class="container">
+      <a href="/blog" class="back-to-blog"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+      <p>When most people start shopping for a mortgage, they go to their bank or the first lender they find online. They get one set of rates, one set of terms, and one answer: <strong>approved or denied.</strong></p>
+
+      <p>But what if the answer doesn't have to be that simple?</p>
+
+      <!-- TOPICS -->
+      <div class="topics-box">
+        <div class="topics-box-header">
+          <i class="fas fa-list"></i>
+          <span>In This Article</span>
+        </div>
+        <ol>
+          <li><a href="#problem-with-one-lender">The Problem with One Lender</a></li>
+          <li><a href="#why-100-lenders">Why 100+ Lenders Changes Everything</a></li>
+          <li><a href="#personal-guidance">Personal Guidance, Not a Sales Pitch</a></li>
+          <li><a href="#who-this-helps">Who This Helps Most</a></li>
+          <li><a href="#see-your-options">Ready to See Your Real Options?</a></li>
+        </ol>
+      </div>
+
+      <h2 id="problem-with-one-lender">The Problem with One Lender</h2>
+
+      <p>A single lender has a single set of guidelines. If your financial situation doesn't fit their box perfectly&mdash;maybe your credit score is 10 points below their threshold, maybe you're self-employed, maybe you're buying an investment property&mdash;you get a "no."</p>
+
+      <p>That "no" doesn't mean you can't get a mortgage. It means you're talking to the wrong lender.</p>
+
+      <h2 id="why-100-lenders">Why 100+ Lenders Changes Everything</h2>
+
+      <p>As an independent mortgage broker, I work with over 100 wholesale lenders. Each one has different guidelines, different rate sheets, and different strengths. That means:</p>
+
+      <ul>
+        <li><strong>More residential loan options</strong> for more borrower scenarios&mdash;from first-time buyers to seasoned investors</li>
+        <li><strong>Every major loan type covered:</strong> Conventional, FHA, VA, USDA, Jumbo, DSCR, Non-QM, bank statement loans, and more</li>
+        <li><strong>Competitive rates</strong> because lenders compete for your business, not the other way around</li>
+        <li><strong>Creative solutions</strong> for self-employed borrowers, recent credit events, mixed-use properties, and unique situations</li>
+      </ul>
+
+      <div class="callout-box">
+        <p><strong>The broker advantage:</strong> When you work with a broker instead of a single bank, you get access to a marketplace of lenders competing for your loan. That competition works in your favor&mdash;better rates, more flexible terms, and more ways to get approved.</p>
+      </div>
+
+      <!-- INLINE CTA -->
+      <div class="inline-cta">
+        <h3>Curious What You Qualify For?</h3>
+        <p>Start an application to see your real options across 100+ lenders. No commitment, no obligation.</p>
+        <a href="https://innovative.my1003app.com/139171/register" target="_blank" class="btn-primary">Start Your Application</a>
+        <span class="no-obligation"><i class="fas fa-lock" style="margin-right:0.3rem;"></i> No obligation &mdash; just get to know your options</span>
+      </div>
+
+      <h2 id="personal-guidance">Personal Guidance, Not a Sales Pitch</h2>
+
+      <p>Technology is great for research, but when it comes to the biggest financial decision of your life, you deserve a real person who understands your goals. That's what I provide: clear answers, honest advice, and hands-on support from your first question through closing day.</p>
+
+      <p>No AI chatbot telling you what to do. No call center putting you on hold. Just direct access to someone who knows the mortgage market inside and out.</p>
+
+      <h2 id="who-this-helps">Who This Helps Most</h2>
+
+      <p>If any of these sound familiar, having access to 100+ lenders could make the difference between a denial and an approval:</p>
+
+      <ul>
+        <li>You're self-employed or have non-traditional income</li>
+        <li>Your credit score is good but not perfect</li>
+        <li>You're buying a second home or investment property</li>
+        <li>You need a jumbo loan above conforming limits</li>
+        <li>You've been told "no" by a bank or online lender</li>
+        <li>You want to compare rates across multiple lenders without multiple hard credit pulls</li>
+      </ul>
+
+      <h2 id="see-your-options">Ready to See Your Real Options?</h2>
+
+      <p>Don't settle for one lender's answer when you could have dozens. <a href="/#contact" style="color:var(--blue-primary);font-weight:600;text-decoration:underline;">Schedule a call with me</a> and let's find the right loan for your situation&mdash;not the loan that's convenient for the lender.</p>
+
+      <div class="callout-box">
+        <p><strong>Ready to explore your options?</strong> Andrew Kashella works with over 100 lenders through Innovative Mortgage Services to find the right loan for your situation. <a href="/#contact" style="color:var(--blue-primary);font-weight:600;text-decoration:underline;">Reach out today</a> for a no-obligation conversation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="article-cta">
+    <div class="container" style="max-width:700px;margin:0 auto;">
+      <h2>Have Questions About Your Mortgage Options?</h2>
+      <p>Andrew can walk you through your options and help you find the right loan for your situation.</p>
+      <a href="/#contact" class="btn-primary">Talk With Andrew</a>
+    </div>
+  </section>
+
+  <!-- EQUAL HOUSING BAR -->
+  <div class="equal-housing-bar">
+    <div class="equal-housing-logo">
+      <i class="fas fa-house"></i>
+      <span class="eq-sign">=</span>
+    </div>
+    <span><strong>Equal Housing Lender.</strong> We do business in accordance with the Federal Fair Housing Law and the Equal Credit Opportunity Act.</span>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <div style="max-width:960px;margin:0 auto;">
+      <p class="nmls-line">Andrew Kashella &mdash; NMLS #139171 &nbsp;|&nbsp; Innovative Mortgage Services, Inc. &mdash; NMLS #250769</p>
+      <p>Loan programs are subject to borrower qualification, credit approval, and property eligibility. Not all applicants will qualify. Additional terms and conditions may apply. Interest rates and loan programs are subject to change without notice. This is not a commitment to lend or extend credit.</p>
+      <p style="margin-top:0.5rem;">Verify licensing at the <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer">NMLS Consumer Access</a> website. Innovative Mortgage Services, Inc. is a licensed mortgage broker. This website is not authorized by the New York State Department of Financial Services. No mortgage loan applications for properties located in New York will be accepted through this site.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-top">
@@ -682,6 +850,96 @@
       </div>
     </div>
   </footer>
-  
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.style.display === 'flex';
+      mobileMenu.style.display = open ? 'none' : 'flex';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+      });
+    });
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
+        nav.classList.add('scrolled');
+      } else {
+        nav.style.boxShadow = '0 2px 16px rgba(0,0,0,0.08)';
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <!-- GDPR Cookie Consent Banner -->
+  <style>
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999;
+      background: #1a1a2e; color: #fff; padding: 1rem 1.5rem;
+      display: none; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', sans-serif;
+      font-size: 0.88rem; line-height: 1.5; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+    }
+    .cookie-banner.show { display: flex; }
+    .cookie-banner p { margin: 0; max-width: 700px; }
+    .cookie-banner a { color: #6ec1e4; text-decoration: underline; }
+    .cookie-btn {
+      border: none; border-radius: 6px; padding: 0.5rem 1.25rem;
+      font-weight: 600; font-size: 0.85rem; cursor: pointer;
+      font-family: 'Poppins', sans-serif; white-space: nowrap;
+    }
+    .cookie-btn-accept { background: #2e9b62; color: #fff; }
+    .cookie-btn-accept:hover { background: #257a4e; }
+    .cookie-btn-decline { background: transparent; color: #ccc; border: 1px solid #555; }
+    .cookie-btn-decline:hover { background: rgba(255,255,255,0.08); }
+  </style>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies to analyze site traffic and improve your experience. By clicking "Accept," you consent to our use of analytics cookies. <a href="https://andrewkashella.com/privacy" target="_blank" rel="noopener">Privacy&nbsp;Policy</a></p>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Decline</button>
+  </div>
+
+  <script>
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'granted') {
+        updateConsent('granted');
+      } else if (consent === 'denied') {
+        updateConsent('denied');
+      } else {
+        document.getElementById('cookie-banner').classList.add('show');
+      }
+    })();
+
+    function updateConsent(status) {
+      gtag('consent', 'update', {
+        'ad_storage': status,
+        'ad_user_data': status,
+        'ad_personalization': status,
+        'analytics_storage': status
+      });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookie_consent', 'granted');
+      updateConsent('granted');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookie_consent', 'denied');
+      updateConsent('denied');
+      document.getElementById('cookie-banner').classList.remove('show');
+    }
+  </script>
+  <!-- End GDPR Cookie Consent Banner -->
 </body>
 </html>
