@@ -368,6 +368,79 @@
       color: var(--blue-secondary);
     }
 
+    /* ── Post card template (matches the blog publisher's expected structure) ── */
+    .post-card {
+      display: block;
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(31,94,170,0.08);
+      border: 1px solid rgba(31,94,170,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(31,94,170,0.14);
+    }
+    .post-card-thumb {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
+    }
+    .post-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .post-card-body { padding: 1.5rem; }
+    .post-card-cat {
+      display: inline-block;
+      background: rgba(31,94,170,0.1);
+      color: var(--blue-primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    .post-card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+      font-family: 'Poppins', sans-serif;
+    }
+    .post-card-meta {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* Filter pill buttons */
+    .filter-btn {
+      background: var(--white);
+      border: 1px solid rgba(31,94,170,0.15);
+      color: var(--gray);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .filter-btn:hover { color: var(--blue-primary); border-color: var(--blue-primary); }
+    .filter-btn.active {
+      background: var(--blue-primary);
+      border-color: var(--blue-primary);
+      color: var(--white);
+    }
+
     /* ---- CTA SECTION ---- */
     .blog-cta {
       background: linear-gradient(135deg, var(--blue-secondary) 0%, var(--blue-primary) 100%);
@@ -606,61 +679,79 @@
       <p class="section-label">Latest Articles</p>
       <h2 class="section-title">Guides & <span>Insights</span></h2>
 
-      <div class="blog-grid">
+      <!-- Category filters — drives .post-card[data-cat] filtering -->
+      <div class="blog-filters" id="blogFilters" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin:1.5rem 0;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Loan Options">Loan Options</button>
+        <button class="filter-btn" data-filter="Refinancing">Refinancing</button>
+        <button class="filter-btn" data-filter="First-Time Buyers">First-Time Buyers</button>
+        <button class="filter-btn" data-filter="Financial Strategy">Financial Strategy</button>
+      </div>
 
-        <!-- Post: mortgage-solutions-with-more-options-why-100-lenders-matters -->
-        <a href="/blog/mortgage-solutions-with-more-options-why-100-lenders-matters" class="blog-card">
-          <div class="blog-card-icon">
-            <i class="fas fa-sliders"></i>
+      <!-- Post grid — new posts published via My AI Editor are injected at the top of this container -->
+      <div id="postGrid" class="blog-grid">
+
+        <a href="/blog/mortgage-solutions-with-more-options-why-100-lenders-matters" class="post-card" data-cat="Loan Options">
+          <div class="post-card-thumb">
+            <img src="/images/blog/mortgage-solutions-with-more-options-why-100-lenders-matters.jpg" alt="Mortgage Solutions with More Options" loading="lazy">
           </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">April 7, 2026 &bull; 2 min read</div>
-            <h3>Mortgage Solutions with More Options: Why 100+ Lenders Matters</h3>
-            <p>Not every borrower fits the same mold. Learn why working with a broker who has access to 100+ lenders gives you more loan options and better outcomes.</p>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+          <div class="post-card-body">
+            <div class="post-card-cat">Loan Options</div>
+            <div class="post-card-title">Mortgage Solutions with More Options: Why 100+ Lenders Matters</div>
+            <div class="post-card-meta">Apr 7, 2026 &bull; 2 min read</div>
           </div>
         </a>
 
-        <!-- CARD 1: Refinancing -->
-        <a href="/blog/refinancing-options" class="blog-card">
-          <div class="blog-card-icon">
-            <i class="fas fa-arrow-rotate-right"></i>
+        <a href="/blog/refinancing-options" class="post-card" data-cat="Refinancing">
+          <div class="post-card-thumb">
+            <img src="/images/blog/refinancing-options.jpg" alt="Refinancing Options" loading="lazy">
           </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">April 7, 2026 &bull; 6 min read</div>
-            <h3>Refinancing Your Mortgage: When It Makes Sense and How to Get Started</h3>
-            <p>Interest rates shift, life changes, and your original loan may no longer be the best fit. Learn when refinancing saves you money and how the process works.</p>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+          <div class="post-card-body">
+            <div class="post-card-cat">Refinancing</div>
+            <div class="post-card-title">Refinancing Your Mortgage: When It Makes Sense and How to Get Started</div>
+            <div class="post-card-meta">Apr 7, 2026 &bull; 6 min read</div>
           </div>
         </a>
 
-        <!-- CARD 2: First-Time Buyers -->
-        <a href="/blog/first-time-home-buyers" class="blog-card">
-          <div class="blog-card-icon">
-            <i class="fas fa-key"></i>
+        <a href="/blog/first-time-home-buyers" class="post-card" data-cat="First-Time Buyers">
+          <div class="post-card-thumb">
+            <img src="/images/blog/first-time-home-buyers.jpg" alt="First-Time Home Buyers" loading="lazy">
           </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">April 7, 2026 &bull; 7 min read</div>
-            <h3>First-Time Home Buyers: What Pre-Qualification Really Means and Why It Matters</h3>
-            <p>Before you start touring homes, a pre-qualification gives you clarity on what you can afford and shows sellers you're serious. Here's what to expect.</p>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+          <div class="post-card-body">
+            <div class="post-card-cat">First-Time Buyers</div>
+            <div class="post-card-title">First-Time Home Buyers: What Pre-Qualification Really Means and Why It Matters</div>
+            <div class="post-card-meta">Apr 7, 2026 &bull; 7 min read</div>
           </div>
         </a>
 
-        <!-- CARD 3: Downsizing -->
-        <a href="/blog/downsizing-mortgage-vs-investments" class="blog-card">
-          <div class="blog-card-icon">
-            <i class="fas fa-scale-balanced"></i>
+        <a href="/blog/downsizing-mortgage-vs-investments" class="post-card" data-cat="Financial Strategy">
+          <div class="post-card-thumb">
+            <img src="/images/blog/downsizing-mortgage-vs-investments.jpg" alt="Downsizing & Mortgage" loading="lazy">
           </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">April 7, 2026 &bull; 6 min read</div>
-            <h3>Downsizing? Why a Mortgage Might Be Smarter Than Pulling From Your Investments</h3>
-            <p>When buying a smaller home, paying cash sounds simple. But keeping your investments working while using a mortgage could leave you better off financially.</p>
-            <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+          <div class="post-card-body">
+            <div class="post-card-cat">Financial Strategy</div>
+            <div class="post-card-title">Downsizing? Why a Mortgage Might Be Smarter Than Pulling From Your Investments</div>
+            <div class="post-card-meta">Apr 7, 2026 &bull; 6 min read</div>
           </div>
         </a>
 
       </div>
+
+      <script>
+        (function(){
+          document.querySelectorAll('#blogFilters .filter-btn').forEach(function(btn){
+            btn.addEventListener('click', function(){
+              document.querySelectorAll('#blogFilters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+              btn.classList.add('active');
+              var filter = btn.getAttribute('data-filter');
+              document.querySelectorAll('#postGrid .post-card').forEach(function(card){
+                var cat = card.getAttribute('data-cat');
+                card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+              });
+            });
+          });
+        })();
+      </script>
     </div>
   </section>
 
