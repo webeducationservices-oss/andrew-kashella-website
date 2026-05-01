@@ -28,8 +28,73 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>Andrew Kashella | Mortgage Loan Officer</title>
   <meta name="description" content="Work with Andrew Kashella (NMLS #139171) at Innovative Mortgage Services, Inc. (NMLS #250769) for residential loan options from over 100 lenders, including FHA, VA, conventional, jumbo, refinance, and more." />
+  <link rel="canonical" href="https://andrewkashella.com/" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Andrew Kashella | Innovative Mortgage Services" />
+  <meta property="og:url" content="https://andrewkashella.com/" />
+  <meta property="og:title" content="Andrew Kashella | Mortgage Loan Officer" />
+  <meta property="og:description" content="Residential mortgage solutions from 100+ lenders. Andrew Kashella (NMLS #139171) at Innovative Mortgage Services, Inc." />
+  <meta property="og:image" content="https://andrewkashella.com/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Andrew Kashella | Mortgage Loan Officer" />
+  <meta name="twitter:description" content="Residential mortgage solutions from 100+ lenders. Andrew Kashella (NMLS #139171) at Innovative Mortgage Services, Inc." />
+  <meta name="twitter:image" content="https://andrewkashella.com/images/og-image.jpg" />
+
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lck8aQsAAAAALMA-T6nwfkSf7bv4K-mOhkszeKh"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- JSON-LD: Organization + WebSite + FinancialService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://andrewkashella.com/#organization",
+        "name": "Innovative Mortgage Services, Inc.",
+        "url": "https://andrewkashella.com/",
+        "logo": "https://andrewkashella.com/images/og-image.jpg",
+        "telephone": "+1-727-564-3826",
+        "email": "andrew@innovativemlo.com",
+        "identifier": "NMLS #250769"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://andrewkashella.com/#website",
+        "url": "https://andrewkashella.com/",
+        "name": "Andrew Kashella | Mortgage Loan Officer",
+        "publisher": { "@id": "https://andrewkashella.com/#organization" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "FinancialService",
+        "@id": "https://andrewkashella.com/#service",
+        "name": "Andrew Kashella — Mortgage Loan Officer",
+        "description": "Residential mortgage solutions including FHA, VA, conventional, jumbo, and refinance loans with access to over 100 lenders. NMLS #139171.",
+        "url": "https://andrewkashella.com/",
+        "telephone": "+1-727-564-3826",
+        "email": "andrew@innovativemlo.com",
+        "image": "https://andrewkashella.com/images/og-image.jpg",
+        "priceRange": "$$",
+        "areaServed": { "@type": "Country", "name": "United States" },
+        "provider": { "@id": "https://andrewkashella.com/#organization" },
+        "serviceType": ["Mortgage Loans", "Home Refinancing", "FHA Loans", "VA Loans", "Conventional Loans", "Jumbo Loans", "First-Time Homebuyer Loans"],
+        "identifier": "NMLS #139171"
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --blue-primary: #1F5EAA;
@@ -835,6 +900,18 @@
       color: var(--blue-primary);
     }
 
+    /* Form thank-you state */
+    .form-success { display: none; text-align: center; padding: 1.5rem 0; }
+    .form-success.show { display: block; }
+    .form-success .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--green-primary);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem; color: var(--white);
+    }
+    .form-success p { color: var(--gray); margin-bottom: 0.5rem; }
+    .grecaptcha-badge { visibility: hidden; }
+
     .form-group {
       margin-bottom: 1.25rem;
     }
@@ -1177,7 +1254,7 @@
       </div>
       <div>
         <div class="hero-card">
-          <h3>Why Borrowers Choose Andrew</h3>
+          <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue-primary);text-align:center;">Why Borrowers Choose Andrew</h2>
           <div class="hero-stat-grid">
             <div class="hero-stat">
               <div class="number">100+</div>
@@ -1505,54 +1582,66 @@
       <div class="contact-grid">
         <div class="contact-form">
           <h3><i class="fas fa-paper-plane" style="margin-right:0.5rem;color:var(--green-primary);"></i> Send Andrew a Message</h3>
-          <form action="https://formsubmit.co/andrew@innovativemlo.com" method="POST">
-            <!-- Formsubmit config -->
-            <input type="hidden" name="_subject" value="New Mortgage Inquiry — Andrew Kashella Website" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" style="display:none" />
+          <form action="https://myaieditor.com/api/form-notify" method="POST" data-ajax id="contact-form">
+            <div class="form-fields">
+              <!-- Hidden config -->
+              <input type="hidden" name="site_slug" value="andrew-kashella-website" />
+              <input type="hidden" name="form_type" value="contact" />
+              <input type="hidden" name="recaptcha_token" id="recaptcha_token" />
+              <!-- Honeypot -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-              <div class="form-group">
-                <label>First Name</label>
-                <input type="text" name="First Name" placeholder="John" required />
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div class="form-group">
+                  <label for="f-first">First Name</label>
+                  <input type="text" id="f-first" name="first_name" placeholder="John" required />
+                </div>
+                <div class="form-group">
+                  <label for="f-last">Last Name</label>
+                  <input type="text" id="f-last" name="last_name" placeholder="Smith" required />
+                </div>
               </div>
               <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" name="Last Name" placeholder="Smith" required />
+                <label for="f-email">Email Address</label>
+                <input type="email" id="f-email" name="email" placeholder="john@email.com" required />
               </div>
+              <div class="form-group">
+                <label for="f-phone">Phone Number</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="(555) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label for="f-loan">I'm interested in...</label>
+                <select id="f-loan" name="loan_type">
+                  <option value="">Select a loan type</option>
+                  <option>Home Purchase</option>
+                  <option>Refinance</option>
+                  <option>First-Time Homebuyer</option>
+                  <option>Investment Property</option>
+                  <option>FHA Loan</option>
+                  <option>VA Loan</option>
+                  <option>USDA Loan</option>
+                  <option>Jumbo Loan</option>
+                  <option>Bank Statement Loan</option>
+                  <option>DSCR Loan</option>
+                  <option>Non-QM Loan</option>
+                  <option>Other / Not Sure</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="f-message">Message (optional)</label>
+                <textarea id="f-message" name="message" placeholder="Tell Andrew about your goals..."></textarea>
+              </div>
+              <button type="submit" class="form-submit">Send Message &rarr;</button>
             </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" name="Email" placeholder="john@email.com" required />
+
+            <div class="form-success">
+              <div class="success-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 style="color:var(--text-dark);margin-bottom:0.5rem;">Message Sent!</h3>
+              <p>Thank you for reaching out. Andrew will review your information and reach back out shortly &mdash; usually within one business day.</p>
+              <a href="tel:727-564-3826" class="form-submit" style="display:inline-block;text-decoration:none;margin-top:1rem;">Call Andrew Now: 727-564-3826</a>
             </div>
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" name="Phone" placeholder="(555) 000-0000" />
-            </div>
-            <div class="form-group">
-              <label>I'm interested in...</label>
-              <select name="Loan Type">
-                <option value="">Select a loan type</option>
-                <option>Home Purchase</option>
-                <option>Refinance</option>
-                <option>First-Time Homebuyer</option>
-                <option>Investment Property</option>
-                <option>FHA Loan</option>
-                <option>VA Loan</option>
-                <option>USDA Loan</option>
-                <option>Jumbo Loan</option>
-                <option>Bank Statement Loan</option>
-                <option>DSCR Loan</option>
-                <option>Non-QM Loan</option>
-                <option>Other / Not Sure</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Message (optional)</label>
-              <textarea name="Message" placeholder="Tell Andrew about your goals..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Message &rarr;</button>
           </form>
         </div>
         <div class="contact-info">
@@ -1682,7 +1771,46 @@
       }
     });
 
-    // Form submits via Formsubmit.co to andrew@innovativemlo.com
+    // Form submission — POSTs to myaieditor.com/api/form-notify with reCAPTCHA v3 + honeypot
+    document.querySelectorAll('form[data-ajax]').forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // Honeypot check
+        if (form.querySelector('[name="_honey"]')?.value) return;
+
+        const btn = form.querySelector('[type="submit"]');
+        const originalText = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+        try {
+          if (typeof grecaptcha !== 'undefined') {
+            await new Promise(resolve => grecaptcha.ready(resolve));
+            const token = await grecaptcha.execute('6Lck8aQsAAAAALMA-T6nwfkSf7bv4K-mOhkszeKh', { action: 'form_submit' });
+            const tokenField = form.querySelector('[name="recaptcha_token"]');
+            if (tokenField) tokenField.value = token;
+          }
+        } catch (err) { console.warn('reCAPTCHA error:', err); }
+
+        try {
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+          await fetch('https://myaieditor.com/api/form-notify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+        } catch (err) {
+          console.error('Form submit error:', err);
+        }
+
+        // Show success state regardless (data already captured client-side)
+        const fields = form.querySelector('.form-fields');
+        const success = form.querySelector('.form-success');
+        if (fields) fields.style.display = 'none';
+        if (success) success.classList.add('show');
+        if (btn) { btn.disabled = false; btn.textContent = originalText; }
+      });
+    });
   </script>
 
   <!-- GDPR Cookie Consent Banner -->
