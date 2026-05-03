@@ -1,0 +1,66 @@
+/* Self-hosted Google Fonts — Poppins (static) + Open Sans (variable) — latin subset */
+
+/* Open Sans — variable font, one file covers all weights 400-600 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(/fonts/open-sans.woff2) format('woff2-variations'),
+       url(/fonts/open-sans.woff2) format('woff2');
+}
+
+/* Poppins — static weights */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/poppins-400.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/poppins-500.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/poppins-600.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/poppins-700.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/poppins-800.woff2) format('woff2');
+}
+
+/* Fallback metrics to prevent layout shift while web fonts load */
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('Helvetica Neue'), local('Helvetica'), local('Arial');
+  size-adjust: 112%;
+  ascent-override: 95%;
+  descent-override: 32%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Open Sans Fallback';
+  src: local('Helvetica Neue'), local('Helvetica'), local('Arial');
+  size-adjust: 105%;
+  ascent-override: 102%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}

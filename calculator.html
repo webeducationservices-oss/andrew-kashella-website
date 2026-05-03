@@ -47,8 +47,11 @@
   <meta name="twitter:description" content="Live mortgage calculator powered by the current Freddie Mac 30-year fixed rate." />
   <meta name="twitter:image" content="https://andrewkashella.com/images/og-image.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-700.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-800.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/open-sans.woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/fontawesome.min.css" />
 
   <!-- JSON-LD: BreadcrumbList + WebPage -->
   <script type="application/ld+json">
@@ -91,15 +94,15 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background: var(--bg-light); font-size: 16px; line-height: 1.6; }
-    h1,h2,h3,h4 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    body { font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif; color: var(--text-dark); background: var(--bg-light); font-size: 16px; line-height: 1.6; }
+    h1,h2,h3,h4 { font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; line-height: 1.2; }
     a { text-decoration: none; color: inherit; }
 
     /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 0 2rem; }
     .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 15px 0; }
     .nav-logo { display: flex; flex-direction: column; align-items: flex-start; }
-    .nav-logo .name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--blue-primary); }
+    .nav-logo .name { font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--blue-primary); }
     .nav-logo .brokerage { font-size: 0.72rem; color: var(--gray); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; max-height: 2rem; overflow: hidden; opacity: 1; transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease; }
     .nav-logo .nav-nmls { font-size: 0.68rem; color: var(--gray); }
     .nav-logo .brokerage-nmls { max-height: 2rem; overflow: hidden; opacity: 1; transition: max-height 0.3s ease, opacity 0.3s ease; }
@@ -133,7 +136,7 @@
       min-width: 220px;
     }
     .live-rate-badge .rate-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.2rem; }
-    .live-rate-badge .rate-value { font-family: 'Poppins', sans-serif; font-size: 2.4rem; font-weight: 800; color: #7ee8b0; line-height: 1; }
+    .live-rate-badge .rate-value { font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-size: 2.4rem; font-weight: 800; color: #7ee8b0; line-height: 1; }
     .live-rate-badge .rate-meta { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 0.25rem; }
     .rate-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #7ee8b0; margin-right: 4px; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
@@ -148,7 +151,7 @@
     /* ── INPUTS ── */
     .input-group { margin-bottom: 1.4rem; }
     .input-label { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
-    .input-label .input-val { font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: var(--blue-primary); font-weight: 700; }
+    .input-label .input-val { font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-size: 0.95rem; color: var(--blue-primary); font-weight: 700; }
 
     .dollar-input { position: relative; }
     .dollar-input span { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--gray); font-weight: 600; font-size: 0.9rem; }
@@ -156,7 +159,7 @@
 
     input[type="text"], input[type="number"], input[type="tel"], input[type="email"], select, textarea {
       width: 100%; padding: 0.65rem 0.9rem; border: 1.5px solid #d8e4f0; border-radius: 8px;
-      font-family: 'Open Sans', sans-serif; font-size: 0.9rem; color: var(--text-dark);
+      font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif; font-size: 0.9rem; color: var(--text-dark);
       background: var(--white); outline: none; transition: border-color 0.2s;
     }
     input:focus, select:focus, textarea:focus { border-color: var(--blue-primary); }
@@ -178,7 +181,7 @@
     .term-btns { display: flex; gap: 0.5rem; margin-top: 0.3rem; }
     .term-btn {
       flex: 1; padding: 0.55rem; border: 1.5px solid #d8e4f0; border-radius: 8px;
-      font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 700;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-size: 0.82rem; font-weight: 700;
       background: var(--white); cursor: pointer; color: var(--gray); transition: all 0.15s;
     }
     .term-btn.active { background: var(--blue-primary); border-color: var(--blue-primary); color: var(--white); }
@@ -198,7 +201,7 @@
       text-align: center; padding: 1.5rem 0; border-bottom: 1px solid #e4ecf5; margin-bottom: 1.25rem;
     }
     .total-payment .label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.3rem; }
-    .total-payment .amount { font-family: 'Poppins', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--blue-primary); line-height: 1; }
+    .total-payment .amount { font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--blue-primary); line-height: 1; }
     .total-payment .per-month { font-size: 0.8rem; color: var(--gray); margin-top: 0.3rem; }
 
     /* Donut Chart */
@@ -212,19 +215,19 @@
     .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; }
     .legend-dot { width: 10px; height: 10px; border-radius: 50%; min-width: 10px; }
     .legend-label { color: var(--gray); flex: 1; }
-    .legend-amount { font-weight: 700; font-family: 'Poppins', sans-serif; font-size: 0.82rem; }
+    .legend-amount { font-weight: 700; font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-size: 0.82rem; }
 
     .summary-rows { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
     .summary-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
     .summary-row .s-label { color: var(--gray); }
-    .summary-row .s-val { font-weight: 700; font-family: 'Poppins', sans-serif; }
+    .summary-row .s-val { font-weight: 700; font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; }
     .summary-row.highlight { background: var(--bg-light); padding: 0.5rem 0.75rem; border-radius: 8px; }
     .summary-row.highlight .s-label { color: var(--text-dark); font-weight: 600; }
     .summary-row.highlight .s-val { color: var(--blue-primary); font-size: 0.92rem; }
 
     .btn-get-quote {
       display: block; width: 100%; background: var(--green-primary); color: var(--white);
-      border: none; padding: 0.85rem; border-radius: 10px; font-family: 'Poppins', sans-serif;
+      border: none; padding: 0.85rem; border-radius: 10px; font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.95rem; font-weight: 700; cursor: pointer; text-align: center;
       transition: background 0.2s; margin-top: 1rem;
     }
@@ -286,7 +289,7 @@
     .lead-calc-summary strong { color: var(--text-dark); }
     .btn-lead-submit {
       width: 100%; background: var(--green-primary); color: var(--white); border: none;
-      padding: 0.85rem; border-radius: 8px; font-family: 'Poppins', sans-serif;
+      padding: 0.85rem; border-radius: 8px; font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;
     }
     .btn-lead-submit:hover { background: var(--green-secondary); }
@@ -1042,7 +1045,7 @@ fetchLiveRate();
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999;
       background: #1a1a2e; color: #fff; padding: 1rem 1.5rem;
       display: none; align-items: center; justify-content: center;
-      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', sans-serif;
+      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.88rem; line-height: 1.5; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
     }
     .cookie-banner.show { display: flex; }
@@ -1051,7 +1054,7 @@ fetchLiveRate();
     .cookie-btn {
       border: none; border-radius: 6px; padding: 0.5rem 1.25rem;
       font-weight: 600; font-size: 0.85rem; cursor: pointer;
-      font-family: 'Poppins', sans-serif; white-space: nowrap;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; white-space: nowrap;
     }
     .cookie-btn-accept { background: #2e9b62; color: #fff; }
     .cookie-btn-accept:hover { background: #257a4e; }

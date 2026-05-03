@@ -50,8 +50,11 @@
   <!-- reCAPTCHA v3 -->
   <script src="https://www.google.com/recaptcha/api.js?render=6Lck8aQsAAAAALMA-T6nwfkSf7bv4K-mOhkszeKh"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-700.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-800.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/open-sans.woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/fontawesome.min.css" />
 
   <!-- JSON-LD: Organization + WebSite + FinancialService -->
   <script type="application/ld+json">
@@ -112,7 +115,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif;
       color: var(--text-dark);
       background: var(--white);
       font-size: 16px;
@@ -120,7 +123,7 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       line-height: 1.2;
     }
 
@@ -154,7 +157,7 @@
     }
 
     .nav-logo .name {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--green-primary);
@@ -376,7 +379,7 @@
       font-size: 0.95rem;
       transition: background 0.2s, transform 0.1s;
       display: inline-block;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
     }
 
     .btn-primary:hover {
@@ -395,7 +398,7 @@
       border: 2px solid rgba(255,255,255,0.4);
       transition: background 0.2s, transform 0.1s;
       display: inline-block;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
     }
 
     .btn-secondary:hover {
@@ -413,7 +416,7 @@
       font-size: 0.95rem;
       transition: background 0.2s, transform 0.1s;
       display: inline-block;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
     }
 
     .btn-blue:hover {
@@ -451,7 +454,7 @@
     }
 
     .hero-stat .number {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-size: 2rem;
       font-weight: 800;
       color: #7ee8b0;
@@ -669,7 +672,7 @@
       border-radius: 50%;
       background: var(--blue-primary);
       color: var(--white);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 800;
       font-size: 1.2rem;
       display: flex;
@@ -931,7 +934,7 @@
       padding: 0.75rem 1rem;
       border: 1.5px solid #d8e4f0;
       border-radius: 8px;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.9rem;
       color: var(--text-dark);
       background: var(--white);
@@ -956,7 +959,7 @@
       border: none;
       padding: 0.9rem 2rem;
       border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 0.95rem;
       cursor: pointer;
@@ -1099,7 +1102,7 @@
     }
 
     .footer-brand .name {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--white);
@@ -1121,7 +1124,7 @@
     }
 
     .footer-col h4 {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -1254,7 +1257,7 @@
       </div>
       <div>
         <div class="hero-card">
-          <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue-primary);text-align:center;">Why Borrowers Choose Andrew</h2>
+          <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--white);text-align:center;">Why Borrowers Choose Andrew</h2>
           <div class="hero-stat-grid">
             <div class="hero-stat">
               <div class="number">100+</div>
@@ -1819,7 +1822,7 @@
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999;
       background: #1a1a2e; color: #fff; padding: 1rem 1.5rem;
       display: none; align-items: center; justify-content: center;
-      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', sans-serif;
+      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.88rem; line-height: 1.5; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
     }
     .cookie-banner.show { display: flex; }
@@ -1828,7 +1831,7 @@
     .cookie-btn {
       border: none; border-radius: 6px; padding: 0.5rem 1.25rem;
       font-weight: 600; font-size: 0.85rem; cursor: pointer;
-      font-family: 'Poppins', sans-serif; white-space: nowrap;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; white-space: nowrap;
     }
     .cookie-btn-accept { background: #2e9b62; color: #fff; }
     .cookie-btn-accept:hover { background: #257a4e; }

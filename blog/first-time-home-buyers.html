@@ -47,8 +47,11 @@
   <meta name="twitter:description" content="A first-time homebuyer's guide to mortgage pre-qualification." />
   <meta name="twitter:image" content="https://andrewkashella.com/images/blog/first-time-home-buyers.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-700.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-800.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/open-sans.woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/fontawesome.min.css" />
 
   <!-- JSON-LD: BreadcrumbList + Article -->
   <script type="application/ld+json">
@@ -98,7 +101,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif;
       color: var(--text-dark);
       background: var(--white);
       font-size: 16px;
@@ -106,7 +109,7 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       line-height: 1.2;
     }
 
@@ -138,7 +141,7 @@
     }
 
     .nav-logo .name {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--blue-primary);
@@ -408,7 +411,7 @@
     }
 
     .topics-box-header span {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -538,7 +541,7 @@
       font-size: 0.95rem;
       transition: background 0.2s, transform 0.1s;
       display: inline-block;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
     }
 
     .btn-primary:hover {
@@ -629,7 +632,7 @@
     }
 
     .footer-brand .name {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--white);
@@ -651,7 +654,7 @@
     }
 
     .footer-col h4 {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -974,7 +977,7 @@
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 99999;
       background: #1a1a2e; color: #fff; padding: 1rem 1.5rem;
       display: none; align-items: center; justify-content: center;
-      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', sans-serif;
+      gap: 1rem; flex-wrap: wrap; font-family: 'Open Sans', 'Open Sans Fallback', Helvetica, Arial, sans-serif;
       font-size: 0.88rem; line-height: 1.5; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
     }
     .cookie-banner.show { display: flex; }
@@ -983,7 +986,7 @@
     .cookie-btn {
       border: none; border-radius: 6px; padding: 0.5rem 1.25rem;
       font-weight: 600; font-size: 0.85rem; cursor: pointer;
-      font-family: 'Poppins', sans-serif; white-space: nowrap;
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; white-space: nowrap;
     }
     .cookie-btn-accept { background: #2e9b62; color: #fff; }
     .cookie-btn-accept:hover { background: #257a4e; }
