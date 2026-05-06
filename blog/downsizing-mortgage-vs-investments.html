@@ -242,6 +242,147 @@
 
     .mobile-menu a:hover { color: var(--blue-primary); }
     .mobile-menu a:last-child { border-bottom: none; }
+    /* ── MEGA MENU (Loan Programs) ── */
+    .nav-inner { position: relative; }
+    .has-mega-menu { position: static; }
+    .mega-trigger { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+    .mega-trigger .fa-chevron-down { font-size: 0.65rem; transition: transform 0.2s; }
+    .has-mega-menu:hover .mega-trigger .fa-chevron-down,
+    .has-mega-menu:focus-within .mega-trigger .fa-chevron-down { transform: rotate(180deg); }
+
+    .mega-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      width: min(880px, calc(100vw - 3rem));
+      background: var(--white);
+      border: 1px solid #e4ecf5;
+      border-radius: 14px;
+      box-shadow: 0 16px 48px rgba(15,61,115,0.18);
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+      z-index: 1001;
+    }
+    .has-mega-menu:hover .mega-menu,
+    .has-mega-menu:focus-within .mega-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .mega-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 220px;
+      gap: 1.5rem;
+    }
+    .mega-col-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-primary);
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #f0f4f9;
+    }
+    .mega-link {
+      display: flex !important;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.55rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem !important;
+      transition: background 0.15s;
+      color: var(--text-dark) !important;
+    }
+    .mega-link:hover { background: #f5f9fc; color: var(--blue-primary) !important; }
+    .mega-link i {
+      color: var(--blue-primary);
+      font-size: 1rem;
+      margin-top: 2px;
+      width: 18px;
+      text-align: center;
+    }
+    .mega-link:hover i { color: var(--green-primary); }
+    .mega-link .mega-name { display: block; font-weight: 700; font-size: 0.86rem; line-height: 1.3; margin-bottom: 2px; }
+    .mega-link .mega-desc { display: block; font-size: 0.74rem; color: var(--gray); line-height: 1.4; font-weight: 400; }
+    .mega-cta {
+      background: linear-gradient(135deg, var(--blue-secondary), var(--blue-primary));
+      color: var(--white);
+      border-radius: 12px;
+      padding: 1.25rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .mega-cta-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .mega-cta-title {
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+    }
+    .mega-cta-btn {
+      display: inline-block;
+      background: var(--green-primary);
+      color: var(--white) !important;
+      padding: 0.55rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .mega-cta-btn:hover { background: var(--green-secondary); }
+
+    /* ── MOBILE ACCORDION (Loan Programs) ── */
+    .mobile-accordion { border-bottom: 1px solid #f0f0f0; }
+    .mobile-accordion-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 0.75rem 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: inherit;
+    }
+    .mobile-accordion-trigger .fa-chevron-down { font-size: 0.7rem; transition: transform 0.2s; }
+    .mobile-accordion-trigger[aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); }
+    .mobile-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+    .mobile-accordion-trigger[aria-expanded="true"] + .mobile-submenu { max-height: 720px; }
+    .mobile-submenu-link {
+      display: flex !important;
+      align-items: center;
+      padding: 0.55rem 0 0.55rem 1rem !important;
+      font-size: 0.88rem !important;
+      font-weight: 500 !important;
+      color: var(--text-dark);
+      border-bottom: 1px solid #f6f6f6 !important;
+    }
+    .mobile-submenu-link:last-child { border-bottom: none !important; }
+
+    @media (max-width: 1024px) {
+      .mega-menu { display: none !important; }
+    }
+
 
     /* Template-compat: responsive sidebar + link hover */
     @media (max-width: 900px) {
@@ -759,7 +900,111 @@
       <ul class="nav-links">
         <li><a href="tel:727-564-3826" style="color:var(--green-primary);font-weight:700;"><i class="fas fa-phone" style="margin-right:0.4rem;"></i>727-564-3826</a></li>
         <li><a href="/#about">About</a></li>
-        <li><a href="/#loan-programs">Loan Programs</a></li>
+        <li class="has-mega-menu">
+          <a href="/#loan-programs" class="mega-trigger">Loan Programs <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <div class="mega-menu" role="menu" aria-label="Loan Programs">
+            <div class="mega-inner">
+          <div class="mega-col">
+            <div class="mega-col-title">Purchase Loans</div>
+            <a href="/conventional-loans/" class="mega-link">
+              <i class="fas fa-house" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Conventional Loans</span>
+                <span class="mega-desc">Solid credit, stable income, flexible terms.</span>
+              </span>
+            </a>
+            <a href="/fha-loans/" class="mega-link">
+              <i class="fas fa-house-chimney" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">FHA Loans</span>
+                <span class="mega-desc">Flexible qualification, lower down payment options.</span>
+              </span>
+            </a>
+            <a href="/va-loans/" class="mega-link">
+              <i class="fas fa-medal" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">VA Loans</span>
+                <span class="mega-desc">For eligible veterans, active-duty, and military families.</span>
+              </span>
+            </a>
+            <a href="/usda-loans/" class="mega-link">
+              <i class="fas fa-seedling" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">USDA Loans</span>
+                <span class="mega-desc">Eligible rural-area buyers with favorable terms.</span>
+              </span>
+            </a>
+            <a href="/first-time-buyer-loans/" class="mega-link">
+              <i class="fas fa-key" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">First-Time Buyer Loans</span>
+                <span class="mega-desc">Programs to help you buy your first home.</span>
+              </span>
+            </a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Refinance & Equity</div>
+            <a href="/refinance/" class="mega-link">
+              <i class="fas fa-rotate" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Refinance Loans</span>
+                <span class="mega-desc">Improve terms, lower payments, restructure debt.</span>
+              </span>
+            </a>
+            <a href="/cash-out-refinance/" class="mega-link">
+              <i class="fas fa-coins" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Cash-Out Refinance</span>
+                <span class="mega-desc">Tap home equity for major financial goals.</span>
+              </span>
+            </a>
+            <a href="/renovation-loans/" class="mega-link">
+              <i class="fas fa-hammer" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Renovation Loans</span>
+                <span class="mega-desc">Finance improvements and upgrades.</span>
+              </span>
+            </a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Specialty & Investor</div>
+            <a href="/jumbo-loans/" class="mega-link">
+              <i class="fas fa-building-columns" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Jumbo Loans</span>
+                <span class="mega-desc">Higher-value purchases above conforming limits.</span>
+              </span>
+            </a>
+            <a href="/bank-statement-loans/" class="mega-link">
+              <i class="fas fa-table" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Bank Statement Loans</span>
+                <span class="mega-desc">For self-employed borrowers with non-traditional income.</span>
+              </span>
+            </a>
+            <a href="/dscr-loans/" class="mega-link">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">DSCR Loans</span>
+                <span class="mega-desc">Investor loans based on property cash flow.</span>
+              </span>
+            </a>
+            <a href="/non-qm-loans/" class="mega-link">
+              <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+              <span>
+                <span class="mega-name">Non-QM Loans</span>
+                <span class="mega-desc">Alternative options for complex financial profiles.</span>
+              </span>
+            </a>
+          </div>
+              <div class="mega-cta">
+                <div class="mega-cta-eyebrow">Not sure which fits?</div>
+                <div class="mega-cta-title">Talk with Andrew about your goals</div>
+                <a href="/#contact" class="mega-cta-btn">Get Pre-Qualified &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </li>
         <li><a href="/calculator">Calculator</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/#contact">Contact</a></li>
@@ -771,7 +1016,23 @@
     </div>
     <div class="mobile-menu" id="mobile-menu">
       <a href="/#about">About</a>
-      <a href="/#loan-programs">Loan Programs</a>
+      <div class="mobile-accordion">
+        <button type="button" class="mobile-accordion-trigger" aria-expanded="false">Loan Programs <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="mobile-submenu">
+        <a href="/conventional-loans/" class="mobile-submenu-link"><i class="fas fa-house" style="margin-right:0.55rem;color:var(--green-primary);"></i>Conventional Loans</a>
+        <a href="/fha-loans/" class="mobile-submenu-link"><i class="fas fa-house-chimney" style="margin-right:0.55rem;color:var(--green-primary);"></i>FHA Loans</a>
+        <a href="/va-loans/" class="mobile-submenu-link"><i class="fas fa-medal" style="margin-right:0.55rem;color:var(--green-primary);"></i>VA Loans</a>
+        <a href="/usda-loans/" class="mobile-submenu-link"><i class="fas fa-seedling" style="margin-right:0.55rem;color:var(--green-primary);"></i>USDA Loans</a>
+        <a href="/first-time-buyer-loans/" class="mobile-submenu-link"><i class="fas fa-key" style="margin-right:0.55rem;color:var(--green-primary);"></i>First-Time Buyer Loans</a>
+        <a href="/refinance/" class="mobile-submenu-link"><i class="fas fa-rotate" style="margin-right:0.55rem;color:var(--green-primary);"></i>Refinance Loans</a>
+        <a href="/cash-out-refinance/" class="mobile-submenu-link"><i class="fas fa-coins" style="margin-right:0.55rem;color:var(--green-primary);"></i>Cash-Out Refinance</a>
+        <a href="/renovation-loans/" class="mobile-submenu-link"><i class="fas fa-hammer" style="margin-right:0.55rem;color:var(--green-primary);"></i>Renovation Loans</a>
+        <a href="/jumbo-loans/" class="mobile-submenu-link"><i class="fas fa-building-columns" style="margin-right:0.55rem;color:var(--green-primary);"></i>Jumbo Loans</a>
+        <a href="/bank-statement-loans/" class="mobile-submenu-link"><i class="fas fa-table" style="margin-right:0.55rem;color:var(--green-primary);"></i>Bank Statement Loans</a>
+        <a href="/dscr-loans/" class="mobile-submenu-link"><i class="fas fa-chart-line" style="margin-right:0.55rem;color:var(--green-primary);"></i>DSCR Loans</a>
+        <a href="/non-qm-loans/" class="mobile-submenu-link"><i class="fas fa-puzzle-piece" style="margin-right:0.55rem;color:var(--green-primary);"></i>Non-QM Loans</a>
+        </div>
+      </div>
       <a href="/calculator">Calculator</a>
       <a href="/blog">Blog</a>
       <a href="/#contact">Contact</a>
