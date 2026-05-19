@@ -118,8 +118,25 @@
           { "@type": "City", "name": "Clearwater" },
           { "@type": "State", "name": "Florida" }
         ],
-        "provider": { "@id": "https://andrewkashella.com/#organization" },
-        "serviceType": ["Mortgage Loans", "Home Refinancing", "FHA Loans", "VA Loans", "Conventional Loans", "Jumbo Loans", "First-Time Homebuyer Loans"],
+        "parentOrganization": { "@id": "https://andrewkashella.com/#organization" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Mortgage Loan Programs",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conventional Loans", "url": "https://andrewkashella.com/conventional-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "FHA Loans", "url": "https://andrewkashella.com/fha-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "VA Loans", "url": "https://andrewkashella.com/va-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "USDA Loans", "url": "https://andrewkashella.com/usda-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jumbo Loans", "url": "https://andrewkashella.com/jumbo-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Refinance Loans", "url": "https://andrewkashella.com/refinance/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bank Statement Loans", "url": "https://andrewkashella.com/bank-statement-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DSCR Loans", "url": "https://andrewkashella.com/dscr-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Non-QM Loans", "url": "https://andrewkashella.com/non-qm-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renovation Loans", "url": "https://andrewkashella.com/renovation-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "First-Time Buyer Loans", "url": "https://andrewkashella.com/first-time-buyer-loans/" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cash-Out Refinance", "url": "https://andrewkashella.com/cash-out-refinance/" } }
+          ]
+        },
         "identifier": "NMLS #139171"
       }
     ]
