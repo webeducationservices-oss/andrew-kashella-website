@@ -47,6 +47,9 @@
   <meta name="twitter:description" content="Live mortgage calculator from Andrew Kashella — Dunedin, FL. Serving Pinellas County, Greater Tampa, and all of Florida." />
   <meta name="twitter:image" content="https://andrewkashella.com/images/og-image.jpg" />
 
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lck8aQsAAAAALMA-T6nwfkSf7bv4K-mOhkszeKh"></script>
+
   <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-700.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-800.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/open-sans.woff2" crossorigin />
@@ -339,6 +342,23 @@
       font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;
     }
     .btn-lead-submit:hover { background: var(--green-secondary); }
+    .btn-lead-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    /* Form thank-you state */
+    .form-success { display: none; text-align: center; padding: 1.5rem 0; }
+    .form-success.show { display: block; }
+    .form-success .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--green-primary);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem; color: var(--white);
+    }
+    .form-success h4 {
+      font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif;
+      font-size: 1.15rem; color: var(--text-dark); margin-bottom: 0.5rem;
+    }
+    .form-success p { color: var(--gray); font-size: 0.92rem; margin-bottom: 0.5rem; }
+    .grecaptcha-badge { visibility: hidden; }
     .form-disclaimer { font-size: 0.7rem; color: var(--gray); margin-top: 0.6rem; text-align: center; line-height: 1.5; }
 
     /* ── FOOTER ── */
@@ -778,69 +798,83 @@
       </div>
       <div class="lead-form">
         <h3><i class="fas fa-paper-plane" style="color:var(--green-primary);margin-right:0.5rem;"></i> Get Your Personalized Quote</h3>
-        <form action="https://formsubmit.co/andrew@innovativemlo.com" method="POST">
-          <input type="hidden" name="_subject" value="Mortgage Calculator Lead — Andrew Kashella Website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="text" name="_honey" style="display:none" />
-          <!-- Hidden calculator data -->
-          <input type="hidden" name="Calculator - Home Price" id="hid-price" />
-          <input type="hidden" name="Calculator - Loan Amount" id="hid-loan" />
-          <input type="hidden" name="Calculator - Interest Rate" id="hid-rate" />
-          <input type="hidden" name="Calculator - Loan Term" id="hid-term" />
-          <input type="hidden" name="Calculator - Est Monthly Payment" id="hid-payment" />
+        <form action="https://myaieditor.com/api/form-notify" method="POST" data-ajax id="calc-lead-form">
+          <div class="form-fields">
+            <!-- Hidden config -->
+            <input type="hidden" name="site_slug" value="andrew-kashella-website" />
+            <input type="hidden" name="form_type" value="calculator-quote" />
+            <input type="hidden" name="recaptcha_token" id="recaptcha_token" />
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-          <!-- Summary chip -->
-          <div class="lead-calc-summary" id="lead-summary">
-            Based on your calculator: <strong id="ls-price">—</strong> home &bull;
-            <strong id="ls-loan">—</strong> loan &bull;
-            <strong id="ls-rate">—</strong> rate &bull;
-            <strong id="ls-term">—</strong> term &bull;
-            Est. <strong id="ls-payment">—</strong>/mo
-          </div>
+            <!-- Hidden calculator data -->
+            <input type="hidden" name="calc_home_price" id="hid-price" />
+            <input type="hidden" name="calc_loan_amount" id="hid-loan" />
+            <input type="hidden" name="calc_interest_rate" id="hid-rate" />
+            <input type="hidden" name="calc_loan_term" id="hid-term" />
+            <input type="hidden" name="calc_monthly_payment" id="hid-payment" />
 
-          <div class="form-row">
-            <div class="fg">
-              <label>First Name *</label>
-              <input type="text" name="First Name" placeholder="John" required />
+            <!-- Summary chip -->
+            <div class="lead-calc-summary" id="lead-summary">
+              Based on your calculator: <strong id="ls-price">—</strong> home &bull;
+              <strong id="ls-loan">—</strong> loan &bull;
+              <strong id="ls-rate">—</strong> rate &bull;
+              <strong id="ls-term">—</strong> term &bull;
+              Est. <strong id="ls-payment">—</strong>/mo
+            </div>
+
+            <div class="form-row">
+              <div class="fg">
+                <label for="cf-first">First Name *</label>
+                <input type="text" id="cf-first" name="first_name" placeholder="John" required />
+              </div>
+              <div class="fg">
+                <label for="cf-last">Last Name *</label>
+                <input type="text" id="cf-last" name="last_name" placeholder="Smith" required />
+              </div>
             </div>
             <div class="fg">
-              <label>Last Name *</label>
-              <input type="text" name="Last Name" placeholder="Smith" required />
+              <label for="cf-email">Email Address *</label>
+              <input type="email" id="cf-email" name="email" placeholder="john@email.com" required />
             </div>
+            <div class="fg">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="(555) 000-0000" />
+            </div>
+            <div class="fg">
+              <label for="cf-goal">I'm looking to...</label>
+              <select id="cf-goal" name="goal">
+                <option value="">Select one</option>
+                <option>Purchase a home</option>
+                <option>Refinance my current mortgage</option>
+                <option>Buy an investment property</option>
+                <option>Buy my first home</option>
+                <option>Just exploring options</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="cf-timeline">Timeline</label>
+              <select id="cf-timeline" name="timeline">
+                <option value="">Select one</option>
+                <option>ASAP / Already under contract</option>
+                <option>Within 30 days</option>
+                <option>1–3 months</option>
+                <option>3–6 months</option>
+                <option>6+ months / Just researching</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-lead-submit">Send My Quote Request &rarr;</button>
+            <p class="form-disclaimer">By submitting, you consent to be contacted by Andrew Kashella at Innovative Mortgage Services, Inc. regarding your mortgage inquiry. NMLS #139171 | Broker NMLS #250769</p>
           </div>
-          <div class="fg">
-            <label>Email Address *</label>
-            <input type="email" name="Email" placeholder="john@email.com" required />
+
+          <div class="form-success">
+            <div class="success-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Quote Request Sent!</h4>
+            <p>Thanks for reaching out. Andrew has your calculator numbers and will follow up shortly &mdash; usually within one business day.</p>
+            <a href="tel:727-564-3826" class="btn-lead-submit" style="display:inline-block;text-decoration:none;width:auto;padding-left:1.5rem;padding-right:1.5rem;margin-top:0.75rem;">Call Andrew Now: 727-564-3826</a>
           </div>
-          <div class="fg">
-            <label>Phone Number</label>
-            <input type="tel" name="Phone" placeholder="(555) 000-0000" />
-          </div>
-          <div class="fg">
-            <label>I'm looking to...</label>
-            <select name="Goal">
-              <option value="">Select one</option>
-              <option>Purchase a home</option>
-              <option>Refinance my current mortgage</option>
-              <option>Buy an investment property</option>
-              <option>Buy my first home</option>
-              <option>Just exploring options</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label>Timeline</label>
-            <select name="Timeline">
-              <option value="">Select one</option>
-              <option>ASAP / Already under contract</option>
-              <option>Within 30 days</option>
-              <option>1–3 months</option>
-              <option>3–6 months</option>
-              <option>6+ months / Just researching</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-lead-submit">Send My Quote Request &rarr;</button>
-          <p class="form-disclaimer">By submitting, you consent to be contacted by Andrew Kashella at Innovative Mortgage Services, Inc. regarding your mortgage inquiry. NMLS #139171 | Broker NMLS #250769</p>
         </form>
       </div>
     </div>
@@ -1023,6 +1057,45 @@ function calculate() {
   document.getElementById('ls-term').textContent = S.term + ' yr';
   document.getElementById('ls-payment').textContent = fmtDec(total);
 }
+
+// ── LEAD FORM SUBMIT (form-notify + reCAPTCHA v3 + honeypot) ──
+document.querySelectorAll('form[data-ajax]').forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // Honeypot — bot filled the hidden field
+    if (form.querySelector('[name="_honey"]')?.value) return;
+
+    const btn = form.querySelector('[type="submit"]');
+    const originalText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+    try {
+      if (typeof grecaptcha !== 'undefined') {
+        await new Promise(resolve => grecaptcha.ready(resolve));
+        const token = await grecaptcha.execute('6Lck8aQsAAAAALMA-T6nwfkSf7bv4K-mOhkszeKh', { action: 'form_submit' });
+        const tokenField = form.querySelector('[name="recaptcha_token"]');
+        if (tokenField) tokenField.value = token;
+      }
+    } catch (err) { console.warn('reCAPTCHA error:', err); }
+
+    try {
+      const data = Object.fromEntries(new FormData(form).entries());
+      await fetch('https://myaieditor.com/api/form-notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (err) {
+      console.error('Form submit error:', err);
+    }
+
+    const fields = form.querySelector('.form-fields');
+    const success = form.querySelector('.form-success');
+    if (fields) fields.style.display = 'none';
+    if (success) success.classList.add('show');
+    if (btn) { btn.disabled = false; btn.textContent = originalText; }
+  });
+});
 
 // ── AMORTIZATION TABLE ─────────────────────────────────────
 function buildAmortTable(months) {
