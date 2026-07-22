@@ -344,6 +344,33 @@
     .btn-lead-submit:hover { background: var(--green-secondary); }
     .btn-lead-submit:disabled { opacity: 0.7; cursor: not-allowed; }
 
+    /* TCPA consent (required before submit) */
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      padding: 0.85rem 0.95rem;
+      background: var(--bg-light);
+      border: 1px solid #d8e4f0;
+      border-radius: 8px;
+    }
+    .form-consent input[type="checkbox"] {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--green-primary);
+      cursor: pointer;
+    }
+    .form-consent label {
+      font-size: 0.75rem;
+      line-height: 1.55;
+      color: var(--gray);
+      cursor: pointer;
+    }
+    .form-consent label strong { color: var(--text-dark); }
+
     /* Form thank-you state */
     .form-success { display: none; text-align: center; padding: 1.5rem 0; }
     .form-success.show { display: block; }
@@ -863,8 +890,14 @@
                 <option>6+ months / Just researching</option>
               </select>
             </div>
+            <!-- TCPA express written consent -->
+            <div class="form-consent">
+              <input type="checkbox" id="cf-tcpa" name="tcpa_consent" value="yes" required />
+              <label for="cf-tcpa">By checking this box, I authorize <strong>Andrew Kashella</strong> and <strong>Innovative Mortgage Services, Inc.</strong> (NMLS #250769) to contact me at the phone number and email address I provided &mdash; including by automated dialing system, pre-recorded voice message, and text message (SMS) &mdash; about mortgage products and services. I understand consent is <strong>not required</strong> to purchase any product or service, and I may revoke it at any time. Message and data rates may apply.</label>
+            </div>
+            <input type="hidden" name="tcpa_consent_version" value="2026-07-22" />
             <button type="submit" class="btn-lead-submit">Send My Quote Request &rarr;</button>
-            <p class="form-disclaimer">By submitting, you consent to be contacted by Andrew Kashella at Innovative Mortgage Services, Inc. regarding your mortgage inquiry. NMLS #139171 | Broker NMLS #250769</p>
+            <p class="form-disclaimer">Andrew Kashella NMLS #139171 | Innovative Mortgage Services, Inc. NMLS #250769</p>
           </div>
 
           <div class="form-success">

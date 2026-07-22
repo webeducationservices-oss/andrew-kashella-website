@@ -331,6 +331,33 @@
     .form-submit { background: var(--green-primary); color: var(--white); border: none; padding: 0.9rem 2rem; border-radius: 8px; font-family: 'Poppins', 'Poppins Fallback', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 0.95rem; cursor: pointer; width: 100%; transition: background 0.2s; }
     .form-submit:hover { background: var(--green-secondary); }
 
+    /* TCPA consent (required before submit) */
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg-light);
+      border: 1px solid #d8e4f0;
+      border-radius: 8px;
+    }
+    .form-consent input[type="checkbox"] {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--green-primary);
+      cursor: pointer;
+    }
+    .form-consent label {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: var(--gray);
+      cursor: pointer;
+    }
+    .form-consent label strong { color: var(--text-dark); }
+
     .contact-info h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
     .contact-info p { color: var(--gray); margin-bottom: 2rem; }
     .contact-btns { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
@@ -637,6 +664,12 @@
                 <label for="f-message">Message (optional)</label>
                 <textarea id="f-message" name="message" placeholder="Tell Andrew about your goals..."></textarea>
               </div>
+              <!-- TCPA express written consent -->
+              <div class="form-consent">
+                <input type="checkbox" id="f-tcpa" name="tcpa_consent" value="yes" required />
+                <label for="f-tcpa">By checking this box, I authorize <strong>Andrew Kashella</strong> and <strong>Innovative Mortgage Services, Inc.</strong> (NMLS #250769) to contact me at the phone number and email address I provided &mdash; including by automated dialing system, pre-recorded voice message, and text message (SMS) &mdash; about mortgage products and services. I understand consent is <strong>not required</strong> to purchase any product or service, and I may revoke it at any time. Message and data rates may apply.</label>
+              </div>
+              <input type="hidden" name="tcpa_consent_version" value="2026-07-22" />
               <button type="submit" class="form-submit">Send Message &rarr;</button>
             </div>
 
