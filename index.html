@@ -2085,6 +2085,10 @@
             <li><a href="#contact">Investment Property</a></li>
             <li><a href="/contact/">Contact</a></li>
             <li><a href="https://innovative.my1003app.com/139171/register" target="_blank">Start Application</a></li>
+          
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/accessibility/">Accessibility</a></li>
           </ul>
         </div>
       </div>
@@ -2155,23 +2159,39 @@
           }
         } catch (err) { console.warn('reCAPTCHA error:', err); }
 
+        let accepted = false;
         try {
           const formData = new FormData(form);
           const data = Object.fromEntries(formData.entries());
-          await fetch('https://myaieditor.com/api/form-notify', {
+          const res = await fetch('https://myaieditor.com/api/form-notify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
           });
+          const out = await res.json().catch(() => ({}));
+          accepted = res.ok && out.accepted !== false;
         } catch (err) {
           console.error('Form submit error:', err);
         }
 
-        // Show success state regardless (data already captured client-side)
+        // Only show success when the server actually accepted the lead
         const fields = form.querySelector('.form-fields');
         const success = form.querySelector('.form-success');
-        if (fields) fields.style.display = 'none';
-        if (success) success.classList.add('show');
+        if (accepted) {
+          if (fields) fields.style.display = 'none';
+          if (success) success.classList.add('show');
+        } else {
+          let errBox = form.querySelector('.form-error');
+          if (!errBox) {
+            errBox = document.createElement('div');
+            errBox.className = 'form-error';
+            errBox.setAttribute('role', 'alert');
+            errBox.style.cssText = 'margin-top:1rem;padding:0.85rem 1rem;border-radius:8px;background:#fdecea;border:1px solid #f5c2c0;color:#8a1c17;font-size:0.9rem;line-height:1.5;';
+            (fields || form).appendChild(errBox);
+          }
+          errBox.innerHTML = 'We could not submit your request just now. Please call Andrew directly at <a href="tel:727-564-3826" style="color:#8a1c17;font-weight:700;">727-564-3826</a> or email <a href="mailto:andrew@innovativemlo.com" style="color:#8a1c17;font-weight:700;">andrew@innovativemlo.com</a>.';
+          errBox.style.display = 'block';
+        }
         if (btn) { btn.disabled = false; btn.textContent = originalText; }
       });
     });
